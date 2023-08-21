@@ -20,13 +20,17 @@ export const Farming = () => {
 
         <Typography component="div" mt={2}>
           <Trans>
-            Provide liquidity to any of our markets and start farming $CMOON. The governance token
-            for mooncake finance.
+            Provide liquidity to any of our markets and start pre-mining $CMOON. The governance
+            token for mooncake finance.
           </Trans>
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" target="_blank" href={'https://docs.mooncake.fi'}>
+        <Button
+          variant="contained"
+          target="_blank"
+          href={'https://docs.mooncake.fi/token-overview/usdemcake-pre-mine-protocol-token'}
+        >
           <Trans>Learn more</Trans>
         </Button>
       </CardActions>
