@@ -183,6 +183,7 @@ export const SupplyModalContent = React.memo(
           amount={amount}
           symbol={supplyUnWrapped ? currentNetworkConfig.baseAssetSymbol : poolReserve.symbol}
           addToken={addToken}
+          isSupply={true}
         />
       );
 
