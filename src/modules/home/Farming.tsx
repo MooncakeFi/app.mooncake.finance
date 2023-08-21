@@ -15,12 +15,12 @@ export const Farming = () => {
       <CardMedia sx={{ height: 140 }} image={farmingPng.src} />
       <CardContent>
         <Typography component="div" variant="h3" sx={{ mr: 4 }}>
-          <Trans>Pre-Mine CMOON</Trans>
+          <Trans>Pre-Mine MCAKE</Trans>
         </Typography>
 
         <Typography component="div" mt={2}>
           <Trans>
-            Provide liquidity to any of our markets and start pre-mining $CMOON. The governance
+            Provide liquidity to any of our markets and start pre-mining $MCAKE. The governance
             token for mooncake finance.
           </Trans>
         </Typography>
