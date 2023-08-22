@@ -140,7 +140,7 @@ export const PitchBanner = () => {
                 },
               })}
             >
-              <Trans>Meet MCAKE!</Trans>
+              <Trans>Meet $MCAKE!</Trans>
             </Typography>
             <Typography
               sx={(theme) => ({
@@ -153,7 +153,7 @@ export const PitchBanner = () => {
               })}
               color="text.secondary"
             >
-              Pre-Mining for MCAKE is now live. Provide liquidty and farm $eMCAKE. $eMCAKE can be
+              Pre-Mining for $MCAKE is now live. Provide liquidty and farm $eMCAKE. $eMCAKE can be
               claimed for $MCAKE at a 1:1 ratio.
             </Typography>
           </Box>
