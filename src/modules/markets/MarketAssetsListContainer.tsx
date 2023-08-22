@@ -17,6 +17,7 @@ import { getGhoReserve, GHO_SUPPORTED_MARKETS, GHO_SYMBOL } from 'src/utils/ghoU
 
 import { GENERAL } from '../../utils/mixPanelEvents';
 import { GhoBanner } from './Gho/GhoBanner';
+import {PitchBanner} from "./pitch/PitchBanner";
 
 export const MarketAssetsListContainer = () => {
   const { reserves, loading } = useAppDataContext();
@@ -100,6 +101,10 @@ export const MarketAssetsListContainer = () => {
           <GhoBanner reserve={ghoReserve} />
         </Box>
       )}
+
+      <Box mb={4}>
+        <PitchBanner />
+      </Box>
 
       {/* Unfrozen assets list */}
       <MarketAssetsList reserves={unfrozenReserves} loading={loading} />

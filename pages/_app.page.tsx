@@ -1,6 +1,7 @@
 import '/public/fonts/inter/inter.css';
 import '/public/fonts/quicksand/quicksand.css';
 import '/src/styles/variables.css';
+import '/src/styles/appMiniBanner.css';
 
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

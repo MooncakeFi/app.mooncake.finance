@@ -81,22 +81,6 @@ export const TxSuccessView = ({
           <Trans>All done!</Trans>
         </Typography>
 
-        {isSupply && (
-          <Alert severity="info">
-            <b>Congrats for providing liquidity!</b>
-            <br />
-            You are now eligible to get exclusive role in our{' '}
-            <Link href="https://discord.com/invite/fCcv8K6Uqy" target="_blank">
-              Discord
-            </Link>
-            . Visit out{' '}
-            <Link href="https://guild.xyz/mooncakefi" target="_blank">
-              Guild.xyz
-            </Link>{' '}
-            page to claim the role and learn more.
-          </Alert>
-        )}
-
         <Box
           sx={{
             mt: 2,
@@ -187,6 +171,24 @@ export const TxSuccessView = ({
                   <Trans>Add to wallet</Trans>
                 </Typography>
               </Button>
+            </Box>
+          )}
+
+          {isSupply && (
+            <Box mt={6}>
+              <Alert severity="info">
+                <b>Congrats for providing liquidity!</b>
+                <br />
+                You are now eligible to get exclusive role in our{' '}
+                <Link href="https://discord.com/invite/fCcv8K6Uqy" target="_blank">
+                  Discord
+                </Link>
+                . Visit out{' '}
+                <Link href="https://guild.xyz/mooncakefi" target="_blank">
+                  Guild.xyz
+                </Link>{' '}
+                page to claim the role and learn more.
+              </Alert>
             </Box>
           )}
         </Box>

@@ -17,7 +17,7 @@ const {
   typography: { pxToRem },
 } = theme;
 
-const FONT = 'Quicksand, Inter, Roboto';
+const FONT = 'Inter, Roboto';
 
 declare module '@mui/material/styles/createPalette' {
   interface PaletteColor extends ColorPartial { }

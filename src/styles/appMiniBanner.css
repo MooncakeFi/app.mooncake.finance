@@ -1,0 +1,48 @@
+#marquee-div{
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #f7ab3f;
+}
+
+#marquee-div .banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%;
+}
+
+#marquee-div .banner-1 {
+  animation: marquee 20s linear infinite;
+}
+
+#marquee-div a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #171920;
+  font-size: 16px;
+  font-family: 'Quicksand', 'Inter', serif;
+}
+
+#marquee-div .banner-2 {
+  animation: marquee2 20s linear infinite;
+  animation-delay: 10s;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}

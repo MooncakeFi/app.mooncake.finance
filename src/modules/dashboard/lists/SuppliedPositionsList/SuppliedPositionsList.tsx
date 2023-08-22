@@ -1,31 +1,32 @@
-import { API_ETH_MOCK_ADDRESS } from '@aave/contract-helpers';
-import { Trans } from '@lingui/macro';
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
-import { Fragment, useState } from 'react';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import {API_ETH_MOCK_ADDRESS} from '@aave/contract-helpers';
+import {Trans} from '@lingui/macro';
+import {Box, Typography, useMediaQuery, useTheme} from '@mui/material';
+import {Fragment, useState} from 'react';
+import {ListColumn} from 'src/components/lists/ListColumn';
+import {ListHeaderTitle} from 'src/components/lists/ListHeaderTitle';
+import {ListHeaderWrapper} from 'src/components/lists/ListHeaderWrapper';
+import {Warning} from 'src/components/primitives/Warning';
+import {AssetCapsProvider} from 'src/hooks/useAssetCaps';
+import {useProtocolDataContext} from 'src/hooks/useProtocolDataContext';
+import {fetchIconSymbolAndName} from 'src/ui-config/reservePatches';
+import {GENERAL} from 'src/utils/mixPanelEvents';
 
-import { CollateralSwitchTooltip } from '../../../../components/infoTooltips/CollateralSwitchTooltip';
-import { CollateralTooltip } from '../../../../components/infoTooltips/CollateralTooltip';
-import { TotalSupplyAPYTooltip } from '../../../../components/infoTooltips/TotalSupplyAPYTooltip';
-import { ListWrapper } from '../../../../components/lists/ListWrapper';
-import { useAppDataContext } from '../../../../hooks/app-data-provider/useAppDataProvider';
+import {CollateralSwitchTooltip} from '../../../../components/infoTooltips/CollateralSwitchTooltip';
+import {CollateralTooltip} from '../../../../components/infoTooltips/CollateralTooltip';
+import {TotalSupplyAPYTooltip} from '../../../../components/infoTooltips/TotalSupplyAPYTooltip';
+import {ListWrapper} from '../../../../components/lists/ListWrapper';
+import {useAppDataContext} from '../../../../hooks/app-data-provider/useAppDataProvider';
 import {
   DASHBOARD_LIST_COLUMN_WIDTHS,
   DashboardReserve,
   handleSortDashboardReserves,
 } from '../../../../utils/dashboardSortUtils';
-import { ListTopInfoItem } from '../../../dashboard/lists/ListTopInfoItem';
-import { DashboardContentNoData } from '../../DashboardContentNoData';
-import { ListButtonsColumn } from '../ListButtonsColumn';
-import { ListLoader } from '../ListLoader';
-import { SuppliedPositionsListItem } from './SuppliedPositionsListItem';
-import { SuppliedPositionsListMobileItem } from './SuppliedPositionsListMobileItem';
+import {DashboardContentNoData} from '../../DashboardContentNoData';
+import {ListButtonsColumn} from '../ListButtonsColumn';
+import {ListLoader} from '../ListLoader';
+import {ListTopInfoItem} from '../ListTopInfoItem';
+import {SuppliedPositionsListItem} from './SuppliedPositionsListItem';
+import {SuppliedPositionsListMobileItem} from './SuppliedPositionsListMobileItem';
 
 const head = [
   {
@@ -46,7 +47,7 @@ const head = [
       <CollateralSwitchTooltip
         event={{
           eventName: GENERAL.TOOL_TIP,
-          eventParams: { tooltip: 'Collateral Switch' },
+          eventParams: {tooltip: 'Collateral Switch'},
         }}
         text={<Trans>Collateral</Trans>}
         key="Collateral"
@@ -58,8 +59,8 @@ const head = [
 ];
 
 export const SuppliedPositionsList = () => {
-  const { user, loading } = useAppDataContext();
-  const { currentNetworkConfig } = useProtocolDataContext();
+  const {user, loading} = useAppDataContext();
+  const {currentNetworkConfig} = useProtocolDataContext();
   const theme = useTheme();
   const downToXSM = useMediaQuery(theme.breakpoints.down('xsm'));
   const [sortName, setSortName] = useState('');
@@ -76,9 +77,9 @@ export const SuppliedPositionsList = () => {
           ...userReserve.reserve,
           ...(userReserve.reserve.isWrappedBaseAsset
             ? fetchIconSymbolAndName({
-                symbol: currentNetworkConfig.baseAssetSymbol,
-                underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
-              })
+              symbol: currentNetworkConfig.baseAssetSymbol,
+              underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
+            })
             : {}),
         },
       })) || [];
@@ -113,19 +114,19 @@ export const SuppliedPositionsList = () => {
             </ListHeaderTitle>
           </ListColumn>
         ))}
-        <ListButtonsColumn isColumnHeader />
+        <ListButtonsColumn isColumnHeader/>
       </ListHeaderWrapper>
     );
   };
 
   if (loading)
-    return <ListLoader title={<Trans>Your supplies</Trans>} head={head.map((col) => col.title)} />;
+    return <ListLoader title={<Trans>Your supplies</Trans>} head={head.map((col) => col.title)}/>;
 
   return (
     <ListWrapper
       tooltipOpen={tooltipOpen}
       titleComponent={
-        <Typography component="div" variant="h3" sx={{ mr: 4 }}>
+        <Typography component="div" variant="h3" sx={{mr: 4}}>
           <Trans>Your supplies</Trans>
         </Typography>
       }
@@ -148,7 +149,7 @@ export const SuppliedPositionsList = () => {
                     setOpen={setTooltipOpen}
                     event={{
                       eventName: GENERAL.TOOL_TIP,
-                      eventParams: { tooltip: 'Total Supplied APY' },
+                      eventParams: {tooltip: 'Total Supplied APY'},
                     }}
                   />
                 }
@@ -161,7 +162,7 @@ export const SuppliedPositionsList = () => {
                     setOpen={setTooltipOpen}
                     event={{
                       eventName: GENERAL.TOOL_TIP,
-                      eventParams: { tooltip: 'Total Supplied Collateral' },
+                      eventParams: {tooltip: 'Total Supplied Collateral'},
                     }}
                   />
                 }
@@ -171,9 +172,44 @@ export const SuppliedPositionsList = () => {
         </>
       }
     >
+      <Box px={6}>
+        {sortedReserves.length > 0 ? (
+          <>
+            <Warning severity="info">
+              <Typography variant="subheader1">
+                <Trans>Congrats! You now have special access to our Discord!</Trans>
+              </Typography>
+              <Trans>
+                As a liquidity provider, you will get roles in our discord that
+                give you exclusive access to private channels. Visit{' '}
+                <a href="https://guild.xyz/mooncakefi" target="_blank" rel="noreferrer">
+                  Guild.xyz
+                </a>{' '}
+                to claim these roles.
+              </Trans>
+            </Warning>
+          </>
+        ) : (
+          <>
+            <Warning severity="info">
+              <Typography variant="subheader1">
+                <Trans>Provide liquidity and get special access to our Discord</Trans>
+              </Typography>
+              <Trans>
+                Users who provide liquidity will get special roles in our discord
+                that give you access to exclusive channels. Visit{' '}
+                <a href="https://guild.xyz/mooncakefi" target="_blank" rel="noreferrer">
+                  Guild.xyz
+                </a>{' '}
+                to learn more.
+              </Trans>
+            </Warning>
+          </>
+        )}
+      </Box>
       {sortedReserves.length ? (
         <>
-          {!downToXSM && <RenderHeader />}
+          {!downToXSM && <RenderHeader/>}
           {sortedReserves.map((item) => (
             <Fragment key={item.underlyingAsset}>
               <AssetCapsProvider asset={item.reserve}>
@@ -187,7 +223,7 @@ export const SuppliedPositionsList = () => {
           ))}
         </>
       ) : (
-        <DashboardContentNoData text={<Trans>Nothing supplied yet</Trans>} />
+        <DashboardContentNoData text={<Trans>Nothing supplied yet</Trans>}/>
       )}
     </ListWrapper>
   );
