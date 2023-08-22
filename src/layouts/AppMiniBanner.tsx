@@ -12,7 +12,7 @@ const AppMiniBanner = () => {
           target="_blank"
           mr={4}
         >
-          <Trans>🥮 $CMAKE PRE-MINE IS LIVE 🥮</Trans>
+          <Trans>🥮 $MCAKE PRE-MINE IS LIVE 🥮</Trans>
         </Link>
         <span>&middot;</span>
         <Link
