@@ -1,4 +1,4 @@
-#marquee-div{
+#marquee-div {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
@@ -13,20 +13,20 @@
 }
 
 #marquee-div .banner-1 {
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 #marquee-div a {
   text-decoration: none;
   font-weight: 600;
   color: #171920;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Quicksand', 'Inter', serif;
 }
 
 #marquee-div .banner-2 {
-  animation: marquee2 20s linear infinite;
-  animation-delay: 10s;
+  animation: marquee2 40s linear infinite;
+  /* animation-delay: 10s; */
 }
 
 @keyframes marquee {

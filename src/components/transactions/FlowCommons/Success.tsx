@@ -142,7 +142,7 @@ export const TxSuccessView = ({
               />
               <Typography variant="description" color="text.primary" sx={{ mx: '24px' }}>
                 <Trans>
-                  Add {addToken && addToken.aToken ? 'aToken ' : 'token '} to wallet to track your
+                  Add {addToken && addToken.aToken ? 'mToken ' : 'token '} to wallet to track your
                   balance.
                 </Trans>
               </Typography>
@@ -151,7 +151,7 @@ export const TxSuccessView = ({
                   addERC20Token({
                     address: addToken.address,
                     decimals: addToken.decimals,
-                    symbol: addToken.aToken ? `a${addToken.symbol}` : addToken.symbol,
+                    symbol: addToken.aToken ? `m${addToken.symbol}` : addToken.symbol,
                     image: !/_/.test(addToken.symbol) ? base64 : undefined,
                   });
                 }}
@@ -173,26 +173,26 @@ export const TxSuccessView = ({
               </Button>
             </Box>
           )}
-
-          {isSupply && (
-            <Box mt={6}>
-              <Alert severity="info">
-                <b>Congrats for providing liquidity!</b>
-                <br />
-                You are now eligible to get exclusive role in our{' '}
-                <Link href="https://discord.com/invite/fCcv8K6Uqy" target="_blank">
-                  Discord
-                </Link>
-                . Visit out{' '}
-                <Link href="https://guild.xyz/mooncakefi" target="_blank">
-                  Guild.xyz
-                </Link>{' '}
-                page to claim the role and learn more.
-              </Alert>
-            </Box>
-          )}
         </Box>
       </Box>
+
+      {isSupply && (
+        <Box mt={6}>
+          <Alert severity="success" icon={false}>
+            <b>Congrats for supplying assets!</b>
+            <br />
+            You are now eligible to get exclusive role in our{' '}
+            <Link href="https://discord.com/invite/fCcv8K6Uqy" target="_blank">
+              Discord
+            </Link>
+            . Visit out{' '}
+            <Link href="https://guild.xyz/mooncakefi" target="_blank">
+              Guild.xyz
+            </Link>{' '}
+            page to claim the role and learn more.
+          </Alert>
+        </Box>
+      )}
 
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Link

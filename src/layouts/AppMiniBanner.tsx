@@ -12,24 +12,29 @@ const AppMiniBanner = () => {
           target="_blank"
           mr={4}
         >
-          <Trans>$CMAKE Pre-mine IS LIVE</Trans>
+          <Trans>🥮 $CMAKE PRE-MINE IS LIVE 🥮</Trans>
         </Link>
-        <span>&#x25cf;</span>
-        <Link href="javascript:void(0)" color="inherit" target="_blank" mr={4}>
-          <Trans>AUDITS UNDERWAY</Trans>
+        <span>&middot;</span>
+        <Link
+          href="https://docs.mooncake.fi/protocol/audits"
+          color="inherit"
+          target="_blank"
+          mr={4}
+        >
+          <Trans>🔒 AUDITS UNDERWAY 🔒</Trans>
         </Link>
-        <span>&#x25cf;</span>
+        <span>&middot;</span>
         <Link href="https://guild.xyz/mooncakefi" color="inherit" target="_blank" mr={4}>
-          <Trans>Join our GUILD AND GET SPECIAL DISCORD ACCESS</Trans>
+          <Trans>👨‍👩‍👦 JOIN OUR GUILD AND GET SPECIAL DISCORD ACCESS 👨‍👩‍👦</Trans>
         </Link>
-        <span>&#x25cf;</span>
+        <span>&middot;</span>
       </Box>
     );
   };
 
   return (
     <Box>
-      <Box id="marquee-div" py={2}>
+      <Box id="marquee-div" py={1}>
         {[1, 2].map((index) => banner(index))}
       </Box>
     </Box>

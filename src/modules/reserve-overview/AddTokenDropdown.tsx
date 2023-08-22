@@ -163,7 +163,7 @@ export const AddTokenDropdown = ({
           <Box>
             <Box sx={{ px: 4, pt: 3, pb: 2 }}>
               <Typography variant="secondary12" color="text.secondary">
-                <Trans>Mooncake Finance aToken</Trans>
+                <Trans>Mooncake Finance mToken</Trans>
               </Typography>
             </Box>
             <MenuItem
@@ -183,7 +183,7 @@ export const AddTokenDropdown = ({
                   addERC20Token({
                     address: poolReserve.aTokenAddress,
                     decimals: poolReserve.decimals,
-                    symbol: `a${poolReserve.symbol}`,
+                    symbol: `m${poolReserve.symbol}`,
                     image: !/_/.test(poolReserve.symbol) ? aTokenBase64 : undefined,
                   });
                 }

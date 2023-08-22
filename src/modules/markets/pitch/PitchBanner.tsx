@@ -140,7 +140,7 @@ export const PitchBanner = () => {
                 },
               })}
             >
-              <Trans>Meet MCAKE</Trans>
+              <Trans>Meet MCAKE!</Trans>
             </Typography>
             <Typography
               sx={(theme) => ({
@@ -153,8 +153,8 @@ export const PitchBanner = () => {
               })}
               color="text.secondary"
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industrys standard dummy text ever since the 1500s,
+              Pre-Mining for MCAKE is now live. Provide liquidty and farm $eMCAKE. $eMCAKE can be
+              claimed for $MCAKE at a 1:1 ratio.
             </Typography>
           </Box>
         </Box>
@@ -162,7 +162,7 @@ export const PitchBanner = () => {
           variant="contained"
           component={Link}
           size={isCustomBreakpoint ? 'medium' : 'large'}
-          href={ROUTES.reserveOverview('', currentMarket)}
+          href={'https://docs.mooncake.fi/token-overview/usdemcake-pre-mine-protocol-token'}
           sx={{
             marginLeft: {
               xs: 'none',
