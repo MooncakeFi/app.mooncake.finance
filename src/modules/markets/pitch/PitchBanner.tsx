@@ -173,7 +173,7 @@ export const PitchBanner = () => {
             minWidth: 'max-content',
           }}
         >
-          <Trans>View details</Trans>
+          <Trans>Learn More</Trans>
         </Button>
       </Box>
     </Box>
