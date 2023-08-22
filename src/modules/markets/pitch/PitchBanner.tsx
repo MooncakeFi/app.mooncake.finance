@@ -133,6 +133,7 @@ export const PitchBanner = () => {
               sx={(theme) => ({
                 [theme.breakpoints.up(1125)]: {
                   typography: 'h3',
+                  ml: 2,
                 },
                 typography: {
                   xs: 'subheader1',
@@ -140,7 +141,7 @@ export const PitchBanner = () => {
                 },
               })}
             >
-              <Trans>Meet $MCAKE!</Trans>
+              <Trans>Pre-Mine for $MCAKE is now live!</Trans>
             </Typography>
             <Typography
               sx={(theme) => ({
@@ -153,7 +154,7 @@ export const PitchBanner = () => {
               })}
               color="text.secondary"
             >
-              Pre-Mining for $MCAKE is now live. Provide liquidty and farm $eMCAKE. $eMCAKE can be
+              You can now pre-mine for $MCAKE. Provide liquidty and farm $eMCAKE. $eMCAKE can be
               claimed for $MCAKE at a 1:1 ratio.
             </Typography>
           </Box>
