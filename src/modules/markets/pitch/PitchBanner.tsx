@@ -1,11 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { useRootStore } from 'src/store/root';
+import { Link } from 'src/components/primitives/Link';
 
 export const PitchBanner = () => {
   const isCustomBreakpoint = useMediaQuery('(min-width:1125px)');
-  const currentMarket = useRootStore((store) => store.currentMarket);
 
   return (
     <Box
@@ -23,7 +21,7 @@ export const PitchBanner = () => {
     >
       <Box
         component={Link}
-        href={ROUTES.reserveOverview('', currentMarket)}
+        href={'https://docs.mooncake.fi/token-overview/usdemcake-pre-mine-protocol-token'}
         sx={(theme) => ({
           borderRadius: {
             md: 4,
@@ -66,21 +64,21 @@ export const PitchBanner = () => {
           alt="ghost and coin"
           sx={{
             ['@media screen and (min-width: 1125px)']: {
-              width: 290,
+              width: 240,
             },
             width: {
               xs: 198,
-              xsm: 229,
-              md: 266,
+              xsm: 200,
+              md: 240,
             },
             position: 'absolute',
             top: {
-              xs: -40,
-              xsm: -35,
+              xs: -56,
+              xsm: -62,
               md: -63,
             },
             right: {
-              xs: -50,
+              xs: -14,
               xsm: 'unset',
             },
             left: {
@@ -124,6 +122,7 @@ export const PitchBanner = () => {
               ['@media screen and (min-width: 1125px)']: {
                 width: {
                   xs: '278px',
+                  md: '450px',
                   lg: '600px',
                 },
               },
@@ -133,7 +132,6 @@ export const PitchBanner = () => {
               sx={(theme) => ({
                 [theme.breakpoints.up(1125)]: {
                   typography: 'h3',
-                  ml: 2,
                 },
                 typography: {
                   xs: 'subheader1',
