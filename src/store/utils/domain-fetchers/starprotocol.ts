@@ -1,7 +1,7 @@
-import { Contract } from 'ethers';
-import { DomainType, WalletDomain } from 'src/store/walletDomains';
-import { getENSProvider } from 'src/utils/marketsAndNetworksConfig';
-import { tFetch } from 'src/utils/tFetch';
+import {Contract} from 'ethers';
+import {DomainType, WalletDomain} from 'src/store/walletDomains';
+import {getENSProvider} from 'src/utils/marketsAndNetworksConfig';
+import {tFetch} from 'src/utils/tFetch';
 
 const provider = getENSProvider(59144);
 
@@ -35,8 +35,7 @@ const lookupAddress = async (address: string) => {
   );
 
   try {
-    const name = await resolverStarPr.getL2ReverseRecord(address);
-    return name;
+    return await resolverStarPr.getL2ReverseRecord(address);
   } catch (error) {
     console.error('error lookupAddress', error);
     if (error.code === 'CALL_EXCEPTION') {
