@@ -186,8 +186,7 @@ export const getProvider = (chainId: ChainId): ethersProviders.Provider => {
   return providers[chainId];
 };
 
-export const getENSProvider = () => {
-  const chainId = 1;
+export const getENSProvider = (chainId = 1) => {
   const config = getNetworkConfig(chainId);
   return new StaticJsonRpcProvider(config.publicJsonRPCUrl[0], chainId);
 };

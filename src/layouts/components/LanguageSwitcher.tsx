@@ -52,8 +52,6 @@ export const LanguageListItem = ({ component = ListItem, onClick }: LanguageList
 export const LanguagesList = ({ component = ListItem, onClick }: LanguageListItemProps) => {
   const { i18n } = useLingui();
 
-  console.log("langMap", langMap);
-
   return (
     <>
       <Box
