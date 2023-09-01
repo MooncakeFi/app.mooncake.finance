@@ -6,6 +6,7 @@ import { availableMarkets, CustomMarket } from '../../utils/marketsAndNetworksCo
 import { Farming } from './Farming';
 import { Guild } from './Guild';
 import { MarketList } from './MarketList';
+import Partners from './Partners';
 
 export const HomeContentWrapper = () => {
   const { breakpoints } = useTheme();
@@ -48,6 +49,7 @@ export const HomeContentWrapper = () => {
           <Farming />
         </Box>
       </Box>
+      <Partners />
     </Box>
   );
 };

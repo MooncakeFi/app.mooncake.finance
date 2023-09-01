@@ -92,6 +92,11 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     networkLogoPath: '/icons/networks/base.svg',
     themeColor: '#0052FE',
     desc: 'Base is a secure, low-cost, builder-friendly Ethereum L2 built by Coinbase.',
+    bridge: {
+      icon: '/icons/networks/base.svg',
+      name: 'Base Bridge',
+      url: 'https://bridge.base.org/',
+    },
   },
   [59144]: {
     name: 'Linea',
@@ -108,5 +113,10 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     networkLogoPath: '/icons/networks/linea.svg',
     themeColor: '#62DFFF',
     desc: 'A developer-ready zkEVM rollup for scaling Ethereum dapps built by Consensus.',
+    bridge: {
+      icon: '/icons/networks/linea.svg',
+      name: 'Linea Bridge',
+      url: 'https://bridge.linea.build/',
+    },
   },
 } as const;
